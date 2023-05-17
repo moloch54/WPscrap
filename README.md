@@ -9,6 +9,11 @@ git clone https://github.com/moloch54/WPscrap
 cd WPscrap; pip3 install -r requirements.txt
 ```  
 # Usage  
+Updating Database:
+```sh
+python3 WPscrap.py --update
+```  
+Vulns detection:
 ```sh  
 python3 WPscrap.py -L listofurls.txt
 ```
