@@ -428,8 +428,11 @@ for file in os.listdir("vulnDatabase/spiders/"):
 		spider=f.readlines()
 		spiders_tab.append(spider)
 
-with open(f"{args.L}","r") as fichier:
-	urls=fichier.readlines()
+if os.path.isfile(args.L):
+	with open(f"{args.L}","r") as fichier:
+		urls = fichier.readlines()
+else:
+	urls = [args.L]
 
 # retriving content
 
