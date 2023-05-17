@@ -1,15 +1,16 @@
 # WPscrap
-Fast and stealth WordPress scanner, no api-key, searching contributors  for auto-exploit module.  
+Fast and stealth WordPress scanner, no api-key, no limitation.
+Use the top-notch free open-source API www.wpvulnerability.net  
+  
+Searching contributors for auto-exploit module.  
 
 # Installation  
 ```sh
-git clone https://github.com/moloch54/WPscrap
-```
-```sh
-cd WPscrap; pip3 install -r requirements.txt
-```  
+git clone https://github.com/moloch54/WPscrap; cd WPscrap; pip3 install -r requirements.txt  
+``` 
+
 # Usage  
-Updating Database:
+Update Database:
 ```sh
 python3 WPscrap.py --update
 ```  
