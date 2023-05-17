@@ -12,3 +12,6 @@ cd WPscrap; pip3 install -r requirements.txt
 ```sh  
 python3 WPscrap.py -L listofurls.txt
 ```
+```sh
+python3 WPscrap.py -L http://target.com
+```
