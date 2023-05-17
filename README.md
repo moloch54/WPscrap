@@ -20,3 +20,4 @@ python3 WPscrap.py -L listofurls.txt
 ```sh
 python3 WPscrap.py -L http://target.com
 ```
+![WPscrap](https://github.com/moloch54/WPscrap/assets/123097488/92efc5c2-8552-459a-80d2-fa72cc722b92)
