@@ -1,0 +1,5 @@
+wp-file-manager
+/wp-content/plugins/wp-file-manager/readme.txt
+Stable tag:\s*([\d]+\.[\d\..]+)
+
+resultwpfm="$(curl {url}/wp-content/plugins/wp-file-manager/readme.txt -s -L --user-agent 'Mozilla/5.0 \(Macintosh; Intel Mac OS X 10_15_7\) AppleWebKit/605.1.15 \(KHTML, like Gecko\) Version/14.1.1 Safari/605.1.15' | grep 'Stable tag' | awk '{print $3}' | head -n 1)"; if expr match "$resultwpfm" '^[0-9]\.' > /dev/null; then echo "wp-file-manager\t$resultwpfm" >> /tmp/plugins.txt ; fi
