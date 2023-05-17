@@ -2,7 +2,7 @@
 Fast and stealth WordPress scanner, no api-key, no limitation.
 Use the top-notch free open-source API www.wpvulnerability.net  
   
-I'm looking for contributors to dev an auto-exploit module.  
+I'm looking for contributors helping me to dev an auto-exploit module.  
 
 # Installation  
 ```sh
