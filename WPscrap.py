@@ -454,7 +454,7 @@ for url in urls:
 # checking Core version
 
 	core_version = ""
-	match = re.search(r'<meta name="generator" content="WordPress ([\d\.]+)', curl_result)
+	match = re.search(r'<meta name="generator" content="WordPress ([\d]+\.[\d\.]+)', curl_result)
 
 	if match:
 		core_version = match.group(1)
@@ -478,7 +478,13 @@ for url in urls:
 		if core_version !="":
 			core_vulns = check_core_vulns(core_version)
 			if len(core_vulns) != 0:
-				show_vulns(core_vulns)  
+				show_vulns(core_vulns)
+				#
+				#
+				# Need help here for auto-exploit module
+				#
+				#
+
 			
 		#exit()
 		"""
@@ -578,6 +584,14 @@ for url in urls:
 				theme_vulns = check_theme_vulns(theme, theme_version)
 				if len(theme_vulns) != 0:  
 					show_vulns(theme_vulns,2)
+					#
+					#
+					# Need help here for auto-exploit module
+					#
+					#
+
+
+
 			"""
 			os.system(f"searchsploit Wordpress theme {theme} {theme_version} | grep -i WordPress > /tmp/themeVuln.txt")
 			with open("/tmp/themeVuln.txt","r") as f:
@@ -736,6 +750,10 @@ for url in urls:
 				pluginVulns = check_plugin_vulns(plugin, plugin_version)
 				if len(pluginVulns) != 0:  
 					show_vulns(pluginVulns,2)
-
+					#
+					#
+					# Need help here for auto-exploit module
+					#
+					#
 print(reset)
 exit()
