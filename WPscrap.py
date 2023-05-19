@@ -394,7 +394,7 @@ last=last.split("-")
 last=datetime.date(int(last[0]),int(last[1]),int(last[2]))
 delta=datetime.date.today() - last
 if delta.days > 7:
-	if input("Updating Vuln Database? (Y/N):") in ['Y', 'yes','YES','y','Yes']:
+	if input("Updating Vuln Database? (Y/n):") in ['', '\n', 'Y', 'yes', 'YES', 'y', 'Yes']:
 		update()
 		with open("vulnDatabase/lastUpdate.txt","w") as f:
 			last=str(datetime.date.today())
