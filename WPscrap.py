@@ -44,7 +44,7 @@ def printf(message,color):
 		print(color+"[*]"+blue+message+white)
 
 def parse_arg():
-	parser = argparse.ArgumentParser(description="contact-form-7 version checker")
+	parser = argparse.ArgumentParser(description="Fast and stealth WordPress scanner")
 	parser.add_argument("-L", help="list of url")
 	parser.add_argument("-o", help="output file")
 	parser.add_argument("--update",action="store_true", help="updating DB")
