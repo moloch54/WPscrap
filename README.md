@@ -7,7 +7,9 @@ I'm looking for contributors helping me to dev an auto-exploit module.
 # Installation  
 ```sh
 git clone https://github.com/moloch54/WPscrap; cd WPscrap; pip3 install -r requirements.txt  
-``` 
+```  
+You can try if some issues:  
+python3 -m pip install -r requirements.txt  
 
 # Usage  
 Update Database:
