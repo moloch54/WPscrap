@@ -291,16 +291,21 @@ def update():
 
 	file_tab = []
 
+	printf(" Cloning repo",green)
+	# Cloner le référentiel GitHub
+	git.Repo.clone_from('https://github.com/moloch54/WPscrap', 'temp_repo')
 
-	printf(" updating WPscrap.py",green)
-	try:
-		response = requests.get("https://raw.githubusercontent.com/moloch54/WPscrap/main/WPscrap.py", headers=headers, timeout=3)
-		curl_result = response.content.decode('utf-8')
-		with open("WPscrap.py","w") as fic:
-			fic.write(curl_result)
-	except:
-		print("\t" +red+ "connection error!")
-		exit()
+	printf(" updating WPscrap.py", green)
+	# copie de WPscrap.py
+	shutil.copyfile("temp_repo/WPscrap.py", "./WPscrap.py")
+
+	printf(" updating exploits", green)
+	# Copier les fichiers du dossier "toto" dans le répertoire courant
+	shutil.copytree('temp_repo/vulnDatabase/exploits', "vulnDatabase/exploits", dirs_exist_ok=True)
+
+	# Supprimer le référentiel cloné
+	shutil.rmtree('temp_repo')
+
 
 	printf(" updating core vulns",green)
 
