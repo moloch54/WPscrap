@@ -12,7 +12,7 @@ import time
 from colorama import Fore,Style, init
 import random
 
-# Version 1.1
+VERSION = "1.1"
 
 white_underscore = "\033[4;37m"
 
@@ -48,6 +48,7 @@ def printf(message,color):
 def parse_arg():
 	parser = argparse.ArgumentParser(description="Fast and stealth WordPress scanner")
 	parser.add_argument("-L", help="list of url")
+	parser.add_argument("-v", action="store_true", help="version")
 	parser.add_argument("-o", help="output file")
 	parser.add_argument("--update",action="store_true", help="updating DB")
 
@@ -375,6 +376,10 @@ def extract_plugins_with_template(curl_result, regex, nb_group, template_name):
 
 args=parse_arg()
 print()
+
+if args.v:
+	print(f"WPscrap version {VERSION}")
+	exit()
 
 if args.update:
 	update()
