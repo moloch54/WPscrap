@@ -11,6 +11,8 @@ import regex as re
 import time
 from colorama import Fore,Style, init
 import random
+import git
+import shutil
 
 VERSION = "1.1"
 
@@ -288,6 +290,17 @@ def update():
 	update_error = 0
 
 	file_tab = []
+
+
+	printf(" updating WPscrap.py",green)
+	try:
+		response = requests.get("https://raw.githubusercontent.com/moloch54/WPscrap/main/WPscrap.py", headers=headers, timeout=3)
+		curl_result = response.content.decode('utf-8')
+		with open("WPscrap.py","w") as fic:
+			fic.write(curl_result)
+	except:
+		print("\t" +red+ "connection error!")
+		exit()
 
 	printf(" updating core vulns",green)
 
