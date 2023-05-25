@@ -12,6 +12,8 @@ import time
 from colorama import Fore,Style, init
 import random
 
+# Version 1.1
+
 white_underscore = "\033[4;37m"
 
 red = Fore.RED + Style.BRIGHT
