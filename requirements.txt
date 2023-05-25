@@ -3,3 +3,5 @@ datetime
 requests
 regex
 colorama
+gitpython
+shutils
