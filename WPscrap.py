@@ -539,8 +539,8 @@ for url in urls:
 
 	print(blue+"themes:"+white)
 
-	pattern_themes_without_version = r"/wp-content/themes/([^/\"\';]+)/"
-	pattern_themes_with_version = r'\/wp-content\/themes\/([^/\"\';]+).*[?"\']ver=([\d]+\.[\d\.]+)'
+	pattern_themes_without_version = r"/themes/([^/\"\';]+)/"
+	pattern_themes_with_version = r'\/themes\/([^/\"\';]+).*[?"\']ver=([\d]+\.[\d\.]+)'
 
 	themes_with_version = re.findall(pattern_themes_with_version,curl_result)
 	themes_without_version = list(set(re.findall(pattern_themes_without_version,curl_result)))
@@ -646,8 +646,8 @@ for url in urls:
 
 	print(blue+"plugins:"+white)
 
-	pattern_plugins_without_version = r"/wp-content/plugins/([^/\"\';]+)/"
-	pattern_plugins_with_version = r'\/wp-content\/plugins\/([^/\"\';]+).*[?"\']ver=([\d]+\.[\d\.]+)'
+	pattern_plugins_without_version = r"/plugins/([^/\"\';]+)/"
+	pattern_plugins_with_version = r'\/plugins\/([^/\"\';]+).*[?"\']ver=([\d]+\.[\d\.]+)'
 
 	plugins_with_version = re.findall(pattern_plugins_with_version,curl_result)
 	plugins_without_version = list(set(re.findall(pattern_plugins_without_version, curl_result)))
@@ -782,7 +782,7 @@ for url in urls:
 					printf(" API error", red)
 					continue
 
-				all_plugins_tab.append(theme)
+				all_plugins_tab.append(plugin)
 			if plugin_version != "":
 				pluginVulns = check_plugin_vulns(plugin, plugin_version)
 				if len(pluginVulns) != 0:  
