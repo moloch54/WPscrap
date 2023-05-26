@@ -795,29 +795,37 @@ for url in urls:
 
 	# searching authors:
 	author_set = {}
+	author_set_sorted_keys = []
 	XML_list = []
-	print(Fore.BLUE+"authors:"+Fore.WHITE)
 
 	try:
 		response = requests.get(url+"/wp-json/wp/v2/users/", headers=headers, timeout=3)
 		author_set = get_users_API(response.text)
-		author_set_sorted_keys = sorted(author_set)
-		if author_set_sorted_keys != []:
-
-			for keys in author_set_sorted_keys:
-				print(f"{keys}: {author_set[keys]} ")
+		
 	except:
 		pass
 	try:
 		response = requests.get(url+"/feed", headers=headers, timeout=3)
 		XML_list = get_users_feed(response.text)
+
+	except:
+		pass
+	
+	author_set_sorted_keys = sorted(author_set)
+	if author_set_sorted_keys != [] or XML_list != []:
+		print(Fore.BLUE+"authors:"+Fore.WHITE)
+
+	if author_set_sorted_keys != []:
+		for keys in author_set_sorted_keys:
+			print(f"{keys}: {author_set[keys]} ")
+
+	if XML_list != []:
 		items_in_dico = [author_set[key] for key in author_set ]
 		for user in XML_list :
 			if not user in items_in_dico:
 				print(user)
 
-	except:
-		pass
+	print()
 
 print(reset)
 exit()
