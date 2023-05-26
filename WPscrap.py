@@ -389,13 +389,14 @@ def extract_plugins_with_template(curl_result, regex, nb_group, template_name):
 
 def get_users(users):
 	users=json.loads(users)
-	printf(" authors:" , green)
 	author_set = {}
 	for user in users:
 		author_set[user["id"]] = user["slug"]
 	author_set_sorted_keys = sorted(author_set)
-	for keys in author_set_sorted_keys:
-		print(f"{keys}: {author_set[keys]} ")
+	if author_set_sorted_keys != []:
+			printf(" authors:" , green)
+			for keys in author_set_sorted_keys:
+				print(f"{keys}: {author_set[keys]} ")
 
 #
 # script start
@@ -792,12 +793,9 @@ for url in urls:
 
 	# searching authors:
 	try:
-		print()
 		response = requests.get(url+"/wp-json/wp/v2/users/", headers=headers, timeout=3)
 		get_users(response.text)
 	except:
-		printf(" no user found", red)
-		continue
-
+		pass
 print(reset)
 exit()
