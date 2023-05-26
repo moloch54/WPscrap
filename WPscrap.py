@@ -394,7 +394,7 @@ def get_users(users):
 		author_set[user["id"]] = user["slug"]
 	author_set_sorted_keys = sorted(author_set)
 	if author_set_sorted_keys != []:
-			printf(" authors:" , green)
+			print(Fore.BLUE+"authors:"+Fore.WHITE)
 			for keys in author_set_sorted_keys:
 				print(f"{keys}: {author_set[keys]} ")
 
