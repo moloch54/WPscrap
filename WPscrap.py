@@ -52,6 +52,7 @@ def parse_arg():
 	parser.add_argument("-L", help="list of url")
 	parser.add_argument("-v", action="store_true", help="version")
 	parser.add_argument("-o", help="output file")
+	parser.add_argument("--host", help="set hostname")
 	parser.add_argument("--update",action="store_true", help="updating DB")
 
 	args = parser.parse_args()	
@@ -417,6 +418,9 @@ if args.update:
 		last=str(datetime.date.today())
 		f.write(last)
 	exit()
+
+if args.host:
+	headers["Host"] = args.host
 
 # check the last update
 with open("vulnDatabase/lastUpdate.txt","r") as f:
