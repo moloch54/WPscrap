@@ -520,6 +520,11 @@ for url in urls:
 			core_vulns = check_core_vulns(core_version)
 			if len(core_vulns) != 0:
 				show_vulns(core_vulns)
+
+			if os.path.exists("/usr/bin/searchsploit"):
+				os.system(f"searchsploit wordpress core {core_version} | grep -v 'No Results'")
+			
+				
 				#
 				#
 				# Need help here for auto-exploit module
