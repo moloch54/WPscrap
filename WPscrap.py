@@ -803,6 +803,7 @@ for url in urls:
 					#
 
 	# searching authors:
+	time.sleep(2)
 	author_set = {}
 	author_set_sorted_keys = []
 	XML_list = []
