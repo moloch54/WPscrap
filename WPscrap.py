@@ -808,13 +808,13 @@ for url in urls:
 	XML_list = []
 
 	try:
-		response = requests.get(url+"/wp-json/wp/v2/users/", headers=headers, timeout=5)
+		response = requests.get(url+"/wp-json/wp/v2/users/", headers=headers, timeout=10)
 		author_set = get_users_API(response.text)
 		
 	except:
 		pass
 	try:
-		response = requests.get(url+"/feed", headers=headers, timeout=5)
+		response = requests.get(url+"/feed", headers=headers, timeout=10)
 		XML_list = get_users_feed(response.text)
 
 	except:
