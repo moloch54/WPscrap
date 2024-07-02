@@ -507,9 +507,9 @@ for url in urls:
 
 # detection core vuln via API
 		if not core_version in all_core_version_tab:
-			url = f"https://www.wpvulnerability.net/core/{core_version}"
+			
 			try:
-				response = requests.get(url)
+				response = requests.get(f"https://www.wpvulnerability.net/core/{core_version}", timeout =3)
 				with open(f"vulnDatabase/coreVuln/{core_version}", 'wb') as f:
 					f.write(response.content)
 			except:
