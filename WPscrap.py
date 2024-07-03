@@ -408,7 +408,7 @@ def get_users_feed(xml):
 args=parse_arg()
 print()
 
-if not args.L:
+if not args.L and len(sys.argv) < 2:
 	print("python3 WPscrap.py -h")
 	print("for help")
 	exit()
