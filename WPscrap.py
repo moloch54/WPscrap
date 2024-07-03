@@ -408,6 +408,11 @@ def get_users_feed(xml):
 args=parse_arg()
 print()
 
+if not args.L:
+	print("python3 WPscrap.py -h")
+	print("for help")
+	exit()
+	
 if args.v:
 	print(f"WPscrap version {VERSION}")
 	exit()
