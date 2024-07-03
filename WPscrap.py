@@ -14,7 +14,7 @@ import random
 import git
 import shutil
 
-VERSION = "1.1"
+VERSION = "1.2"
 
 white_underscore = "\033[4;37m"
 
