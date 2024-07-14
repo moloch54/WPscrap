@@ -368,7 +368,8 @@ def update():
 		print()
 		printf(f" update error, {update_error} file(s) not updated",red)
 
-
+	print()
+	
 def get_spider(name, url , regex, headers, session):
 	try:
 		with session.get(url, headers=headers, timeout=3) as response:
