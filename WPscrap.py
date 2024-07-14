@@ -15,7 +15,7 @@ import git
 import shutil
 import sys
 
-VERSION = "1.2"
+VERSION = "1.3"
 
 white_underscore = "\033[4;37m"
 
@@ -423,7 +423,8 @@ if args.update:
 	with open("vulnDatabase/lastUpdate.txt","w") as f:
 		last=str(datetime.date.today())
 		f.write(last)
-	exit()
+	if not args.L:
+		exit()
 
 if args.host:
 	headers["Host"] = args.host
@@ -441,11 +442,10 @@ last=last.split("-")
 last=datetime.date(int(last[0]),int(last[1]),int(last[2]))
 delta=datetime.date.today() - last
 if delta.days > 7:
-	if input("Updating Vuln Database? (Y/n):") in ['', '\n', 'Y', 'yes', 'YES', 'y', 'Yes']:
-		update()
-		with open("vulnDatabase/lastUpdate.txt","w") as f:
-			last=str(datetime.date.today())
-			f.write(last)
+	update()
+	with open("vulnDatabase/lastUpdate.txt","w") as f:
+		last=str(datetime.date.today())
+		f.write(last)
 
 
 for file_path in glob.glob('/tmp/*.txt'):
