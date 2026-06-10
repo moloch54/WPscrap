@@ -162,8 +162,10 @@ def check_plugin_vulns(plugin, plugin_version):
 
 	tab_vuln=[]
 
-	v = vuln['data']['vulnerability']
-	#print(v)
+	try:
+		v = vuln['data']['vulnerability']
+	except:
+		return []
 	if v is not None:
 		for i in range(len(v)):
 			try:
