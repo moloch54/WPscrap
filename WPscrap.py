@@ -495,17 +495,32 @@ for url in urls:
 	try:
 		response = requests.get(url, headers=headers, timeout=3)
 		curl_result = response.content.decode('utf-8')
+
+
 	except:
 		print("\t" +red+ "connection error!")
 		continue
 
-# checking Core version
 
+
+
+# checking Core version
+	try:
+		response_wpadmin = requests.get(url + '/wp-admin/', headers=headers, timeout=3)
+		curl_result_wpadmin = response_wpadmin.content.decode('utf-8')
+	except:
+		pass
 	core_version = ""
+	pattern_core_with_version = r'\/wp-admin\/([^/\"\';]+).*[?"\']ver=([\d]+\.[\d\.]+)'
+
 	match = re.search(r'<meta name="generator" content="WordPress ([\d]+\.[\d\.]+)', curl_result)
+	match2 = re.search(pattern_core_with_version, curl_result_wpadmin)
+	
 
 	if match:
 		core_version = match.group(1)
+	elif match2:
+		core_version = match2.group(2)
 
 	if core_version =="" or "Download" in core_version or ".com" in core_version:
 		print(f"WordpressCore version: "+yellow+"not detected"+white)
