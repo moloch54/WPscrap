@@ -1,4 +1,22 @@
-# WPscrap
+# ⚠️ WPscrap is DEPRECATED -> Migrate to CMScan
+
+This repository is no longer maintained.  
+**WPscrap has been replaced by [CMScan](https://github.com/moloch54/CMScan)** — a unified security scanner for **WordPress, Drupal, Joomla, PrestaShop and more**.
+
+---
+
+## 🚀 Migrate to CMScan
+
+1. **Clone** the new repository:
+   ```bash
+   git clone https://github.com/moloch54/CMScan
+   cd CMScan
+   chmod +x install.sh
+   ./install.sh
+   ```
+# Thank you for using WPscrap in the past. We strongly recommend migrating to CMScan to benefit from the latest features and updates.  
+
+  
 Fast and stealth WordPress scanner, no api-key, no limitation.
 Use the top-notch free open-source API www.wpvulnerability.net  
   
