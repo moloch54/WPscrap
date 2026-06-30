@@ -26,6 +26,29 @@ blue = Fore.BLUE + Style.BRIGHT
 white = Fore.WHITE + Style.BRIGHT
 reset = Style.RESET_ALL
 
+print(f"""
+{red}╔══════════════════════════════════════════════════════════
+{red}║  ⚠️  WPscrap est DEPRECATED !							
+{red}║  ════════════════════════════════════════════════════	
+{red}║															
+{red}║  Ce script n'est plus maintenu et sera supprimé.       
+{red}║  Veuillez migrer vers CMScan, le successeur unifié.    
+{red}║                                                         
+{red}║  ➜  {white}git clone https://github.com/moloch54/CMScan{red}      
+{red}║  ➜  {white}cd CMScan{red}                                          
+{red}║  ➜  {white}chmod +x install.sh{red}                     
+{red}║  ➜  {white}./install.sh{red}                                       
+{red}║                                                         
+{red}║  ✅  WordPress, Drupal, Joomla, PrestaShop supportés   
+{red}║  ✅  Installation propre (venv)                        
+{red}║  ✅  Auto‑update intégré                               
+{red}║  ✅  Pas de conflit avec le système                   
+{red}║                                                         
+{red}║  {white}Merci d'utiliser CMScan !{red}              
+{red}╚══════════════════════════════════════════════════════════{reset}
+""")
+print(reset)
+
 nb_core_update = 0
 nb_themes_update = 0
 nb_plugins_update = 0
